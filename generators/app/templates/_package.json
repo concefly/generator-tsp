@@ -1,0 +1,37 @@
+{
+  "name": "<%= pkg %>",
+  "version": "0.0.0",
+  "description": "",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
+  "scripts": {
+    "test": "jest",
+    "ci": "npm run test",
+    "clean": "rm -rf dist/*",
+    "build:es": "tsc -p tsconfig.build.es.json --outDir dist/es",
+    "build:lib": "tsc -p tsconfig.build.json --outDir dist/lib",
+    "build": "npm run clean && npm run build:lib && npm run build:es",
+    "prepublishOnly": "npm run ci && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= gitName %>/<%= pkg %>.git"
+  },
+  "author": "<%= gitName %>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/<%= gitName %>/<%= pkg %>/issues"
+  },
+  "homepage": "https://github.com/<%= gitName %>/<%= pkg %>#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.14",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {},
+  "sideEffects": false
+}
