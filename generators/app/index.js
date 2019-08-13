@@ -49,7 +49,7 @@ module.exports = class extends Generator {
       ['__tests__', '__tests__'],
       ['src', 'src'],
       ['_gitignore', '.gitignore'],
-      ['_jest.config.js', '.jest.config.js'],
+      ['_jest.config.js', 'jest.config.js'],
       ['_package.json', 'package.json'],
       ['_travis.yml', '.travis.yml'],
       ['_tsconfig.build.es.json', 'tsconfig.build.es.json'],
